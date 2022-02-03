@@ -18,7 +18,7 @@ for (let i = numOfMoviesRented; i >= 1; i--) {
     if (i < numOfMoviesRented) {
         var rentDur = prompt("Please enter the next rental duration.");
     }else{
-        var rentDur = prompt("Please enter a rental duration.");
+        rentDur = prompt("Please enter a rental duration.");
     }
     var indMovieCharge = costPerDay * rentDur;
     totalCharge = totalCharge + indMovieCharge;
