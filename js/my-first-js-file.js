@@ -4,10 +4,10 @@
 
 
 
-let myName = prompt(message: "Hi, what's your first name?");
+let myName = prompt(message: "Hi, what's your first name?")
 
 
-myName += " " + prompt(message: "What is your last name, good sir?");
+myName += " " + prompt(message: "What is your last name, good sir?")
 
 //console.log(myName.toUpperCase());
 
