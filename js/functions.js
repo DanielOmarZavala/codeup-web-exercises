@@ -9,10 +9,12 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-function sayHello(name){
-    alert("Hello " + name);
-}
-sayHello(prompt("What is your name?"));
+// function sayHello(name){
+//     //alert("Hello " + name);
+//
+//     return name;
+// }
+//sayHello(prompt("What is your name?"));
 
 /**
  * TODO:
@@ -22,12 +24,21 @@ sayHello(prompt("What is your name?"));
  * console.log 'helloMessage' to check your work
  */
 
+//let helloMessage = sayHello("Daniel");
+
+//console.log(helloMessage);
+
+
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+
+// let myName = "Daniel";
+//
+// sayHello(myName);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -51,6 +62,14 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
+// function isTwo(n){
+//     return n === 2;
+// }
+//
+// isTwo(random);
+
+//console.log(isTwo(random), random);
+
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -63,12 +82,27 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
+function calculateTip(tip, total){
+    return total * tip;
+}
+
+//calculateTip(0.25, 58.30);
+
+//console.log(calculateTip(0.25, 58.30));
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+// let totalIn = prompt("Please enter the bill total.");
+// let tipIn = prompt("Please enter desired tip ex. 0.25");
+//
+// alert(calculateTip(tipIn, totalIn));
+
+
 
 /**
  * TODO:
@@ -84,3 +118,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+
+function applyDiscount(price, discount){
+    return price * discount;
+}
+
+console.log(applyDiscount(prompt("Enter Price:"), prompt("Enter Discount")));
