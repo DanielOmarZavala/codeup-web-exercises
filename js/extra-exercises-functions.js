@@ -75,5 +75,5 @@ function isLoweCase(letter){
 }
 
 function hasLowerCase(string){
-    
+
 }
