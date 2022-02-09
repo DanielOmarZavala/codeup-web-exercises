@@ -17,9 +17,9 @@ do {
 
     console.log(purchasedCones + " cones sold!");
    allCones -= purchasedCones;
-    console.log(allCones + " cones left!"); //QUESTION TO ASK: When string added BEFORE allCones var, program breaks...why?
+    console.log(allCones + " cones left!"); //QUESTION TO ASK: When string added BEFORE allCones var in console.log, program breaks...why?
 
-    //Could make this better...doesn't work very well.
+    //Could improve if statement...doesn't work very well.
     if (purchasedCones > allCones) {
         console.log("I cannot sell " + purchasedCones + " cones, I only have " + allCones);
     }
