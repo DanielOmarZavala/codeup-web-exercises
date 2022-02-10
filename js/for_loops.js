@@ -1,6 +1,6 @@
 "use strict";
 
-//Multiplication Table - For Loop
+//1. Multiplication Table - For Loop
 // var multiplyBy = 1
 //
 // for (let i = 0; i < 10; i++) {
@@ -11,7 +11,7 @@
 //     showMultiplicationTable(7);
 // }
 
-//Random Odd/Even Console.log - For Loop
+//2. Random Odd/Even Console.log - For Loop w/ Function
 // function isOddOrEven (numIn) {
 //     if (numIn % 2 === 0) {
 //         console.log(numIn + " is even!");
@@ -28,14 +28,19 @@
 //     isOddOrEven(numPool);
 // }
 
-//Number pseudo number pyramid
-for (let i = 1; i <= 9; i++) {
-    let sameLine = '';
+//3. Pseudo Number Pyramid - For Loop
+// for (let i = 1; i <= 9; i++) {
+//     let sameLine = '';
+//
+//     for (let j = i; j > 0; j--) {
+//         sameLine += i + '';
+//     }
+//     console.log(sameLine);
+// }
 
-    for (let j = i; j > 0; j--) {
-        sameLine += i + ' ';
-    }
-    console.log(sameLine);
+//4. Subtract 5 from 100 to 5
+for (let i = 100; i >= 5; i -= 5 ) {
+    console.log(i);
 }
 
 
