@@ -1,13 +1,14 @@
 "use strict";
 
-//1. Multiplication Table - For Loop
-// var multiplyBy = 1
+//1. Multiplication Table - For Loop w/ Function
+// let multiplyBy = 1
+//
+// function showMultiplicationTable(numberIn) {
+//     console.log(numberIn * multiplyBy);
+//     multiplyBy += 1;
+// }
 //
 // for (let i = 0; i < 10; i++) {
-//     function showMultiplicationTable(numberIn) {
-//         console.log(numberIn * multiplyBy);
-//         multiplyBy += 1;
-//     }
 //     showMultiplicationTable(7);
 // }
 
@@ -23,7 +24,7 @@
 // }
 //
 // for (let i = 0; i < 10; i++) {
-//     var numPool = Math.floor(Math.random() * 200) + 20;
+//     var numPool = Math.floor(Math.random() * 180) + 20;
 //
 //     isOddOrEven(numPool);
 // }
@@ -39,8 +40,8 @@
 // }
 
 //4. Subtract 5 from 100 to 5
-for (let i = 100; i >= 5; i -= 5 ) {
-    console.log(i);
-}
+// for (let i = 100; i >= 5; i -= 5 ) {
+//     console.log(i);
+// }
 
 
