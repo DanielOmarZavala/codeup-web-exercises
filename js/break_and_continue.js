@@ -3,7 +3,7 @@
 let numIn = 0;
 
 while (numIn % 2 === 0) {
-    numIn += parseInt(prompt("Please enter an odd number between '1' and '50.'"));
+    numIn = parseInt(prompt("Please enter an odd number between '1' and '50.'"));
 }
 
 for (let i = 0; i <= 50; i++) {
