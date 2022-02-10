@@ -16,12 +16,13 @@ do {
    let purchasedCones = Math.floor(Math.random() * 5) + 1;
 
     console.log(purchasedCones + " cones sold!");
-   allCones -= purchasedCones;
+
     console.log(allCones + " cones left!"); //QUESTION TO ASK: When string added BEFORE allCones var in console.log, program breaks...why?
 
     //Could improve if statement...doesn't work very well.
-    if (purchasedCones > allCones) {
+    if (purchasedCones <= allCones) {
         console.log("I cannot sell " + purchasedCones + " cones, I only have " + allCones);
+        allCones -= purchasedCones;
     }
-} while (allCones !== 0);
+} while (allCones > 0);
 console.log("All cones have been sold!");
