@@ -34,7 +34,7 @@
 //     let sameLine = '';
 //
 //     for (let j = i; j > 0; j--) {
-//         sameLine += i + '';
+//         sameLine += i.toString(); // sameLine += i + '';
 //     }
 //     console.log(sameLine);
 // }
