@@ -67,7 +67,7 @@
     }
 
     function third (arrayIn) {
-        console.log("Function Return Last Element: " + arrayNumbers[4]);
+        console.log("Function Return Last Element: " + arrayNumbers[arrayNumbers.length - 1]);
     }
 
     first(arrayNumbers);
