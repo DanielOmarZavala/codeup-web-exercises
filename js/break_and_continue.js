@@ -2,7 +2,7 @@
 
 let numIn = 0;
 
-while (numIn % 2 === 0) {
+while (numIn % 2 === 0 || numIn > 50 || numIn < 0) {
     numIn = parseInt(prompt("Please enter an odd number between '1' and '50.'"));
 }
 
