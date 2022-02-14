@@ -29,4 +29,17 @@
 
     console.log(planetsNewString);
 
+    /*BONUS*/
+    // function buildPlanetUl(arrOfPlanets) {
+    //     let newString = "<ul>";
+    //     for (let i = 0; i < arrOfPlanets.length; i++) {
+    //         newString += "<il>";
+    //         newString += arrOfPlanets(i);
+    //         newString += "</li>";
+    //     }
+    //     return newString;
+    // }
+    //
+    // console.log(buildPlanetUl(planetsArray));
+
 })();
