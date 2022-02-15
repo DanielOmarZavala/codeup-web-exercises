@@ -32,9 +32,9 @@
      */
 
     person.sayHello = function () {
-        console.log("Hello, " + person.first + " " + person.last + "!");
+        return "Hello, " + person.first + " " + person.last + "!";
     }
-    person.sayHello();
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -89,6 +89,7 @@
     let books = [
         {
             title: "The Hatchet",
+            bookNumber: 0,
             author: {
                 firstName: "Gary",
                 lastName: "Paulsen"
@@ -155,6 +156,23 @@
      *      ...
      */
 
+    /*Ry's Bonus Example*/
+    function printAllBooks (books) {
+        books.forEach(function(book, i) {
+            console.log("Book Identification...Scanning Book #" + ++i);
+
+            showBookInfo(book);
+        });
+    }
+
+    /*My Final Solution*/
+    // books.forEach(function(book, i) {
+    //     console.log("Book Identification...Scanning Book #" + ++i);
+    //     console.log("Title: " + book.title);
+    //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    //     console.log("---");
+    // });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -166,4 +184,31 @@
      *   `showBookInfo` function.
      */
 
+    /*Ry's Bonus Example*/
+    function createBook(title, authorName) {
+        let authorNameSplit = authorName.split(" ");
+        return {
+            title: title,
+            author: {
+                firstName: authorNameSplit[0],
+                lastName: authorNameSplit[1]
+            }
+        };
+    }
+
+    addBook(createBook("Clean Code", "Bob Martin"))
+
+    function addBook(book) {
+        books.push(book);
+    }
+
+    console.log(books);
+
+    function showBookInfo(book) {
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("---");
+    }
+
+    printAllBooks(books);
 })();
