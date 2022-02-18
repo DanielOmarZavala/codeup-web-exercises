@@ -49,6 +49,8 @@ fieldset {
 .btn-block {
     /* This element should use 100% of the width */
     width: 100%;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
 }
 
 .btn {
@@ -61,6 +63,10 @@ fieldset {
     border: 1px;
     border-color: #d3d3d3;
     background-color: #0fb784;
+}
+
+.btn:hover {
+    background-color: coral;
 }
 
 .form-control {
