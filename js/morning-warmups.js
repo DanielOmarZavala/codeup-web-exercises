@@ -162,9 +162,16 @@ Should this be a standalone function or should it be a method on the Person obje
 
 
 
-/*Warmup: Create a function which returns true if the given argument is a number, false if it is not a number*/
+/*Warmup 5: Create a function which returns true if the given argument is a number, false if it is not a number*/
 function isNum (valIn) {
     return typeof valIn === typeof 2;
 }
 
-console.log(isNum("3"));
+let Test = {
+    num: 2,
+    notNum: "3"
+};
+
+console.log(isNum(Test.num));
+
+
