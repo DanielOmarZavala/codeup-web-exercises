@@ -167,11 +167,11 @@ function isNum (valIn) {
     return typeof valIn === typeof 2;
 }
 
-let Test = {
+let test = {
     num: 2,
     notNum: "3"
 };
 
-console.log(isNum(Test.num));
+console.log(isNum(test.num));
 
 
