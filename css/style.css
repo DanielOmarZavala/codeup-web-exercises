@@ -1,8 +1,66 @@
 
-
+/*Open up your welcome.html file from earlier.
++Center the main heading
++Add a style to change the color of the headers on your page and make them underlined.
++Add a style to change the background color of the page.
++Add a style to add a background image to your background. Search how to manipulate the position, sizing of this background image.
++Add a style to change the list-style to something other than the default bullet.
++Add a style to change the font for the entire page. Use google fonts if you would like.
++Add a style to change the table, table cells td and rows tr padding and font sizes.
++Add a style to alter the anchor tags and its different states. (e.g. link, visited, hover and active).
++Continue experimenting with styles to increase the visual appeal of the page.*/
 
 
 .fancy-header {
-    color: blue;
+    color: burlywood;
+    text-align: center;
     text-decoration: underline;
+}
+
+h2 {
+    text-decoration: underline
+}
+
+body {
+    background-color: aqua;
+    background-image: url("../img/wallpaperflare.com_wallpaper.png");
+    background-position: center;
+    background-size: 1920px 1080px;
+    color: oldlace;
+    font-family: arial, arial serif;
+}
+
+a:link {
+    color: burlywood;
+}
+a:visited {
+    color: gray;
+}
+
+.li-style {
+    list-style: none
+}
+
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    font-size: 30px;
+}
+table {
+    background-color: black;
+}
+
+th {
+    height: 70px;
+    width: 500px;
+    text-align: center;
+    background-color: blue;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:hover {
+    background-color: coral;
 }
