@@ -240,7 +240,7 @@ a {
 .who-to-follow {
     display: flex;
     flex-flow: column wrap;
-    width: calc(25% - 200px);
+    width: calc(25% - 270px);
     flex-grow: 1;
     margin-left: .5em;
     margin-right: .5em;
