@@ -193,6 +193,15 @@ a {
     padding: 8px;
     border-radius: 5px;
 }
+.btn-follow {
+    border: 1px solid var(--main-link-color);
+    color: var(--main-link-color);
+    background: var(--light-bg);
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    width: 50%;
+}
 .btn-large {
     font-size: 1.3em;
     padding: 10px;
@@ -215,7 +224,7 @@ a {
     color: var(--main-link-color);
 }
 .profile-details {
-    width: calc(25% - 12px);
+    width: calc(25% - 120px);
     margin-left: .5em;
     margin-right: .5em;
 }
@@ -224,15 +233,15 @@ a {
     flex-direction: column;
     flex-wrap: wrap;
     width: calc(50% - 12px);
-
+    flex-grow: 1;
     margin-left: .5em;
     margin-right: .5em;
 }
 .who-to-follow {
     display: flex;
     flex-flow: column wrap;
-    width: calc(24% - 12px);
-
+    width: calc(25% - 200px);
+    flex-grow: 1;
     margin-left: .5em;
     margin-right: .5em;
 }
@@ -247,16 +256,28 @@ a {
     border-bottom: 3px solid var(--main-bg);
     padding: .5em;
     overflow: clip;
+    display: flex;
+    justify-content: space-between;
 }
 .media-image {
     width: 50px;
-
-    margin-top: 1.33em;
+    margin: 1.33em;
 }
 .media-body {
     width: calc(100% - 80px);
-
-    /*float: right;*/
+}
+.media-body-follow {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+.media-follow {
+    width: 100%;
+    background-color: var(--light-bg);
+    padding: .5em;
+    overflow: clip;
+    display: flex;
+    justify-content: space-between;
 }
 .profile-items {
     list-style: none;
