@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+a {
+    display: inline-block;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+nav ul {
+    display: flex;
+    font-family: "Work Sans", sans-serif;
+}
+.nav-bar
