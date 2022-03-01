@@ -19,3 +19,35 @@
 .container-fluid {
     padding: 0;
 }
+
+.card > p {
+    display: flex;
+    justify-content: start;
+    padding: 12px;
+    background: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.card-text {
+    display: flex;
+    justify-content: start;
+    padding: 12px;
+    background: aliceblue;
+    border-color: #007bff;
+    color: #000000;
+    border-radius: 2px;
+}
+
+.cards-footer {
+    display: flex;
+    justify-content: end;
+    background: aliceblue;
+    padding: 10px;
+}
+
+.btn {
+    line-height: 15px;
+    font-size: small;
+}
