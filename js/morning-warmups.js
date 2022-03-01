@@ -105,6 +105,19 @@ Should this be a standalone function or should it be a method on the Person obje
 * */
 
 
+/*
+JS Object Warmup, pt 4:
+We are going to create a method which
+ allows a user to input their desired amount of names names
+use prompt, alert, confirm inside of a while loop
+assign each name to an array
+once the user decides they are done giving names, end the loop and return the string array
+then assigning that returned array by invoking your new function on the Person.names property value!
+Things to consider:
+Should this be a standalone function or should it be a method on the Person object?
+* */
+
+
 // // Defines a contact info object
 // function ContactInfo(phoneNumber, streetAddress, city, state, postalCode, emailAddress) {
 //     this.phoneNumber = phoneNumber;
@@ -117,13 +130,11 @@ Should this be a standalone function or should it be a method on the Person obje
 //
 // // Defines a person object
 // function Person(occupation, dob, contactInfo) {
-//
 //     // assign a property the value of a function *definition*
 //     // this helps get the names of a person, but is not executed until you invoke getNames
 //     this.getNames = getNames;
 //     // actually *invoke* this.getNames() so the names are given when the Person object is created
 //     this.names = this.getNames();
-//
 //     this.occupation = occupation;
 //     this.dob = dob;
 //     this.contactInfo = contactInfo;
@@ -144,17 +155,20 @@ Should this be a standalone function or should it be a method on the Person obje
 //     return namesArr;
 // }
 //
+// // Make a new ContactInfo object
+// let contact = new ContactInfo(
+//     '123.456.7890',
+//     '123 Anywhere Ln',
+//     'Beverly Hills',
+//     'CA',
+//     '90210',
+//     'nope@no-no-no.no');
+//
 // // Make new Person object
 // let person2 = new Person(
 //     "Cat Herder / Firefighter",
 //     "11.30.1989",
-//     new ContactInfo(
-//         '123.456.7890',
-//         '123 Anywhere Ln',
-//         'Beverly Hills',
-//         'CA',
-//         '90210',
-//         'nope@no-no-no.no')
+//     contact
 // );
 //
 // // Log the object so we can see its values
@@ -174,4 +188,17 @@ let test = {
 
 console.log(isNum(test.num));
 
+/*Warmup 6: Create a function that removes a specific string from an array, then returns and logs the changes*/
+let bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
 
+function removeAll(anArr,valueToRemove) {
+    let filteredArr = [];
+    anArr.forEach(function(ele) {
+        if (valueToRemove !== ele) {
+            filteredArr.push(ele);
+        }
+    });
+    return filteredArr;
+}
+
+console.log(removeAll(bugs, "ant"));
