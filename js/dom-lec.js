@@ -5,19 +5,28 @@ let navContent = document.getElementById("navContent");
 // log the thing to make sure you got the thing
 // console.log(navContent);
 
-console.log(navContent.children);
+
 
 // create an element
 let nameElement = document.createElement("p");
 
 // get the data and set it to the text of the new element
-nameElement.innerText = getGitHubInfo().name;
+nameElement.innerText = "Hi, " + getGitHubInfo().name;
 nameElement.style["color"] = 'white';
-console.log(nameElement)
+nameElement.classList.add("col-3");
+nameElement.classList.add("align-self-end");
+
+nameElement.classList.add("text-start");
+
 
 // TODO: Add nameElement to the DOM - specifically in between the GitHub Logo and the ul on the navbar
+navContent.insertBefore (nameElement, navContent.children[1]);
+
+// document.querySelector("div.container-fluid.container-md.row.mx-md-auto.mt-4");
 
 
+
+// navContent.innerHTML = nameElement;
 
 
 
@@ -28,5 +37,6 @@ console.log(nameElement)
 function getGitHubInfo(){
     return {
         name: "vegetasrevenge"
+        details: "I DO CODE REAL GUD"
     };
 }
