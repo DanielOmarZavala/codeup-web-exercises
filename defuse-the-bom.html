@@ -26,10 +26,13 @@
 
         detonationTimer--;
     }
+    let bomTimer = setInterval (updateTimer, 1000)
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
+        let clear = clearIntercal(bomTimer);
+        alert("BOM DEFUSED");
 
     }
 
