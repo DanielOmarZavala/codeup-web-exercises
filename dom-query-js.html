@@ -47,7 +47,8 @@
         subHeader.style.color = "#007CFF";
 
         // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName("li");
+        // var listItems = document.getElementsByTagName("li");
+        var listItems = document.querySelectorAll("li");
 
         // console.log(listItems);
 
@@ -69,13 +70,15 @@
         }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = document.getElementsByClassName("sub-paragraph");
-        var subParagraphs = document.querySelector(".sub-paragraph");
+        var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        // var subParagraphs = document.querySelector(".sub-paragraph");
+        // var subParagraphs = document.querySelectorAll(".sub-paragraph");
 
-        console.log(subParagraphs);
+        // console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs.innerText = "Mission Accomplished!";
+        // subParagraphs.innerText = "Mission Accomplished!";
+        subParagraphs[0].innerText = "Mission Accomplished!";
 
     })();
 </script>
