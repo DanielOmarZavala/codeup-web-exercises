@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+Create an HTML file with only an unordered list with the id of pets in the body.
+Within an inline script declare and array called pets with four elements.
+Loop through the list and add each element as a list item to the ul.
+-->
+
+<ul id="pets">
+
+</ul>
+
+<script>
+
+    let pets = ["watermelon", "rosie", "lola", "fido"];
+
+    let petUl = document.getElementById("pets");
+
+    for (let i = 0; i < pets.length; i++) {
+
+        let li = document.createElement("li");
+
+        //add pet text to each li
+        li.innerText = pets[i];
+
+        //add each li to ul
+        petUl.appendChild(li);
+    }
+
+</script>
+
+</body>
+</html>
