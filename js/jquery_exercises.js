@@ -42,10 +42,6 @@ $("h1, p, li").css("background-color", "yellow");
 
 
 /*CASEY'S EXAMPLE*/
-// $("#heading").html(function() {
-//     alert(this);
-// });
-
 //     $("nav-bar").css("background-color", "green");
 //
 //     $("div.container-fluid > p.col-12").hover(function() {
