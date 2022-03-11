@@ -27,12 +27,21 @@ function getTemplate () {
 // alert(pTag);
 
 /*CLASS SELECTORS*/
-$(".codeup").css("border", "1px solid red");
+// $(".codeup").css("border", "1px solid red");
 
 /*ELEMENT SELECTORS*/
+$("li").css("font-size", "20px");
+// $("h1").css("background-color", "yellow");
+// $("p").css("background-color", "yellow");
+// $("li").css("background-color", "yellow");
+alert($("h1").html());
+
+$("h1, p, li").css("background-color", "yellow");
 
 
 
+
+/*CASEY'S EXAMPLE*/
 // $("#heading").html(function() {
 //     alert(this);
 // });
