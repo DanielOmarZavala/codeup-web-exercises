@@ -1,9 +1,19 @@
 "use strict"
 
-$(document).ready(function() {
-    alert( 'The DOM has finished loading!' );
-});
+// $(document).ready(function() {
+//     alert( 'The DOM has finished loading!' );
+// });
 
+
+let topHeading = $("#top-heading").html();
+alert(topHeading);
+
+let pTag = $("#p-tag").html();
+alert(pTag);
+
+// $("#heading").html(function() {
+//     alert(this);
+// });
 
 //     $("nav-bar").css("background-color", "green");
 //
@@ -13,3 +23,4 @@ $(document).ready(function() {
 // }, function() {
 //     $(this).css("background-color", "none");
 // });
+
