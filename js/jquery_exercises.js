@@ -1,27 +1,37 @@
 "use strict"
 
+/*jquery INTRODUCTION EXERCISE*/
 // $(document).ready(function() {
 //     alert( 'The DOM has finished loading!' );
 // });
 
+/*POPULATE HTML BODY*/
 $("body").append(getTemplate());
 
 function getTemplate () {
-    return '<h1 id="top-heading" class="heading">jquery</h1>' +
-        '<p id="p-tag" class="p-tag">' +
+    return '<h1 id="top-heading" class="top-heading">jquery</h1>' +
+        '<p id="p-tag" class="codeup">' +
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci amet dolor dolore eligendi esse eum exercitationem rem sit voluptatum.' +
         '</p>' +
         '<ul id="ul-element" class="ul-element">' +
-        '<li id="li-element" class="li-element">li element</li>' +
+        '<li id="li-element" class="codeup">li element</li>' +
         '</ul>' +
-        '<div id="div-element" class="div-element">div element</div>';
+        '<div id="div-element" class="codeup">div element</div>';
 }
 
-let topHeading = $("#top-heading").html();
-alert(topHeading);
+/*ID SELECTORS*/
+// let topHeading = $("#top-heading").html();
+// alert(topHeading);
+//
+// let pTag = $("#p-tag").html();
+// alert(pTag);
 
-let pTag = $("#p-tag").html();
-alert(pTag);
+/*CLASS SELECTORS*/
+$(".codeup").css("border", "1px solid red");
+
+/*ELEMENT SELECTORS*/
+
+
 
 // $("#heading").html(function() {
 //     alert(this);
