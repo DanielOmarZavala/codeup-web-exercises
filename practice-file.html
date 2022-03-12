@@ -1,159 +1,77 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Practice</title>-->
-<!--    <link rel="stylesheet" href="css/practice.css">-->
-<!--</head>-->
-<!--<body>-->
-<!--<header>-->
-<!--    <h1>Staff</h1>-->
-<!--</header>-->
-<!--<main>-->
-<!--    <article class="card">-->
-<!--        <section>-->
-<!--            <img src="images/profile.png" alt="profile-image" >-->
-<!--        </section>-->
-<!--        <section class="text-section">-->
-<!--            <h2>Ron Swanson</h2>-->
-<!--            <h3>Director</h3>-->
-<!--            <hr>-->
-<!--        </section>-->
-<!--        <section class="icons">-->
-<!--            <a href="#"><i class="fab fa-github"></i></a>-->
-<!--            <a href="#"><i class="fab fa-twitter"></i></a>-->
-<!--            <a href="#"><i class="fab fa-linkedin"></i></a>-->
-<!--        </section>-->
-<!--    </article>-->
-
-<!--    &lt;!&ndash; additional cards ... &ndash;&gt;-->
-<!--</main>-->
-<!--</body>-->
-<!--</html>-->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DOM Events</title>
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script src="js/Practice.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/practice.css">
+
+
+    <title>Title</title>
 
 </head>
 <body>
-<div class="line"></div>
-<div class="wrapper">
-    <header role="banner">
-        <nav role="navigation">
-            <h1 id="main-header">Asperion</h1>
-            <ul class="nav-ul">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Technologies</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contacts</a></li>
-            </ul>
-        </nav>
-    </header>
+<main class="row mx-auto mt-4">
+<!--    <div class="col-4 card">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at consequatur cum eligendi, facere ipsam,
+        iste laudantium maiores molestiae neque possimus praesentium quia quis sint unde ut, voluptatum! Beatae
+        consequatur cupiditate debitis dolore est expedita facere fugit hic, ipsam nisi nostrum odio pariatur possimus
+        quidem quo rerum sapiente similique ullam.
+    </div>-->
+<!--    <div class="col-3 card m-3">
+        THIS IS THE FIRST ELEMENT
+    </div>
+    <div class="col-3 card m-3">
+        THIS IS THE SECOND ELEMENT
 
-    <form action="">
-        <label for="search">SEARCH</label><input type="text" name="search" id="search">
-    </form>
+    </div>-->
+    <div class="col-3 card m-3">
+        <input class="m-3" id="user-input" type="text">
+    </div>
+    <div class="col-3 card m-3">
+        <span>Your text: </span><span id="user-output"></span>
+    </div>
+    <div class="col-3 card m-3">
+        THIS IS THE THIRD ELEMENT
 
-    <main role="main">
-        <section class="sec-intro" role="section">
-            <!--            <img src="https://www.techweekeurope.co.uk/wp-content/uploads/2012/07/wifimountaindownload.jpg" alt="" />-->
-            <h1>Be Innovative!</h1>
-        </section>
-        <section class="sec-boxes" role="section">
-            <article class="box">
-                <h1 id="vanilla">Open-minded</h1>
-                <p>Every option should be explored and tried no matter how unpredictable, impossible, insane or
-                    ridiculous does it looks or sound.</p>
-                <p class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolor incidunt laudantium, natus nihil numquam optio pariatur perferendis, quidem recusandae sed vel vitae? Accusantium at laudantium minima neque nostrum quia?</p>
-                <button class="button" id="more" type="button" role="button" value="More">More</button>
-            </article>
-            <article class="box">
-                <h1>Creative</h1>
-                <p>Brainstorming, idea generation, playing sessions, note taking. You think you used everything? We will
-                    challenge your mind and its abilities to the limits.</p>
-                <p class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolor incidunt laudantium, natus nihil numquam optio pariatur perferendis, quidem recusandae sed vel vitae? Accusantium at laudantium minima neque nostrum quia?</p>
-            </article>
-            <article class="box">
-                <h1>Bold</h1>
-                <p>Our methods and ideas are are not written or following any books, curriculums or rules. We consider
-                    ourselves rebels and we are proud of it.</p>
-            </article>
-            <article class="box">
-                <h1>Smart</h1>
-                <p>Every project with innovation as a goal requires smart approach. Identify real problem first and look
-                    for the smartest and simplest solution later.</p>
-            </article>
-        </section>
-        <hr/>
-        <h1>Previous Projects</h1>
-        <article>
-            <h1>Neural network for Google</h1>
-            <p>People from Google approached us this January with offer to create new neural network for whole Google's
-                ecosystem. This idea was very interesting and looked almost impossible at first glance. However, our
-                engineers proved their expertise and built amazing autonomous platform. <a class="link"
-                                                                                           href="#">more...</a></p>
-        </article>
-        <article>
-            <h1>Faster operating system for Apple</h1>
-            <p>For a years, since founding days of a company, Apple always worked with its own operating system. In
-                October, this was about to change. Our company got chance to rewrite the history by creating brand new
-                OS for Apple. It was very difficult and all our employees worked hard every day. <a class="link"
-                                                                                                    href="#">more...</a>
-            </p>
-        </article>
-        <article>
-            <h1>Manufacturing technology for Intel</h1>
-            <p>Intel has been manufacturing company for many years. They always used the latest technologies to achieve
-                the best results with lowest costs. However, this was not enough. Intel decided to offer us something
-                that could disrupt whole technology sector. <a class="link" href="#">more...</a></p>
-        </article>
-        </section>
-        <section class="sec-standards" role="section">
-            <hr/>
-            <h1>Our Standards</h1>
-            <article>
-                <h1>Excellence</h1>
-                <p>Our goal is to give our customers the best solutions in highest aquality. Our employees strive for
-                    excellence and work hard to achieve it. Everything must work and be reliable. Great design must be
-                    both, aesthetic and functional. Product or service that pass these conditions will be
-                    everlasting.</p>
-            </article>
-            <article>
-                <h1>Uniqueness</h1>
-                <p>Our mantra is to create new paths. We are not interested in copying others because we know, that if
-                    you want to succeed, you have to be different, unique. Our customers know that we create unique
-                    products and experience for them. This is the best way to differentiate us and our brand from the
-                    noise on market. Unique, different and proud.</p>
-            </article>
-        </section>
-    </main>
-</div>
-<footer>
-    <nav role="navigation">
-        <ul class="nav-ul">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Technologies</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contacts</a></li>
-        </ul>
-    </nav>
-    <p class="copy">&copy; Alex Devero Design 2014</p>
-</footer>
-<div class="line"></div>
+    </div>
+    <div class="col-3 card m-3">
+        THIS IS THE FOURTH ELEMENT
+
+    </div>
+    <div class="col-3 card m-3">
+        THIS IS THE FIFTH ELEMENT
+
+    </div>
+    <div class="col-3 card m-3">
+        THIS IS THE SIXTH ELEMENT
+
+    </div>
+    <div class="col-3 card m-3">
+        THIS IS THE SEVENTH ELEMENT
+
+    </div>
+    <div class="col-3 card m-3">
+        THIS IS THE EIGHTH ELEMENT
+
+    </div>
+    <div class="col-3 card m-3">
+        THIS IS THE NINTH ELEMENT
+
+    </div>
+</main>
 
 
-<script src="js/dom-events-lec.js"></script>
+
 </body>
 </html>
