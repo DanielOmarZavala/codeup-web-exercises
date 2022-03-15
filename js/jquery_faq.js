@@ -23,10 +23,19 @@
 //         'Aspernatur corporis eos fuga iure laudantium nam nisi totam ut veniam vitae!</p></div>'
 // }
 
-$('dd').addClass('invis');
+$(document).ready(function (){
+
+
+$('dd').addClass('invisible');
 
 $('dl').after('<button id="toggle-button">Toggler</button>');
 
 $('#toggle-button').click(function(){
-    $('dd').toggleClass('invis');
-})
+    $('dd').toggleClass('invisible');
+
+});
+
+$('dt').click(function (){
+    $(this).css('background-color', 'yellow');
+});
+});
