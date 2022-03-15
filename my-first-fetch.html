@@ -41,9 +41,6 @@
     //     });
 
 
-
-
-
     //do fetch stuff
     fetch("https://swapi.dev/api/planets/")
         .then(response => response.json())
@@ -51,19 +48,22 @@
 
             console.log(data);
 
-            data.results.map((planet)=> {
-                console.log(planet);
-            });
+            // data.results.map((planet)=> {
+            //     console.log(planet);
+            // });
 
-            // for (let i = 0; i < 5; i++) {
-            //     let dailyTemp = data.daily[i].temp.day
-            //
-            //     html += '<li>' + dailyTemp + '</li>';
-            // }
-            //
-            // html += '</ul>';
-            //
-            // $('#weather').html(html);
+            let html = "";
+            html += '<ul>'
+
+            for (let i = 0; i <= 2; i++) {
+                let test = data.results[i].name;
+
+                html += '<li>' + test + '</li>';
+            }
+
+            html += '</ul>';
+
+            $('#weather').html(html);
         });
 </script>
 
