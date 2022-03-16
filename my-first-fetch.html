@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div id="weather"></div>
+<div id="box"></div>
 
 <script src="js/keys.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -53,17 +53,19 @@
             // });
 
             let html = "";
-            html += '<ul>'
+            html += '<div>'
 
             for (let i = 0; i <= 2; i++) {
-                let test = data.results[i].name;
+                let pName = data.results[i].name;
+                let pClimate = data.results[i].climate;
+                let pop = data.results[i].population;
 
-                html += '<li>' + test + '</li>';
+                html += '<p>' + pName + '</p>' + '<ul>' + '<li>' + 'Climate: ' + pClimate + '</li>' + '<li>' + 'Population: ' + pop + '</li>' + '</ul>';
             }
 
-            html += '</ul>';
+            html += '</div>';
 
-            $('#weather').html(html);
+            $('#box').html(html);
         });
 </script>
 
