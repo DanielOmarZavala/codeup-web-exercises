@@ -1,28 +1,45 @@
 "use strict"
 
-$(document).ready(function(){
+$(document).ready(function () {
 
     //create box-one empty block element after search-container
     $('#search-container').after("<section id='box-one'></section> ");
 
-    let lat = 29.5696;
-    let lon = 98.7068;
+    let initlat = 29.5696;
+    let initlon = 98.7068;
 
-    wxData(lat, lon);
+    wxFetch(initlat, initlon);
 
-    function wxData (lat, lon) {
+    function wxFetch(lat, lon) {
         fetch(`https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=${lat}&lon=${lon}&appid=${OWM_KEY}`)
             .then(response => response.json())
             .then(response => renderDailyForecast(response))
             .catch(err => console.error(err));
     }
 
-    function getSanitizedResponse(response) {
+    function renderDailyForecast(response) {
         console.log(response.daily);
-        $('#box-one').html(renderDailyForecast(response.daily));
+        $('#box-one').html(createDailyForecast(response.daily));
     }
 
-    function renderDailyForecast (response){
+    function createDailyForecast(dailyObjArr) {
+        let html = '<div class="row">';
+        for (let i=0; i < 5; i++) {
+            html += createWxCard(dailyObjArr[i]);
+        }
+        html += '<div>';
+        return html;
+    }
+
+    function createWxCard (dayObj) {
 
     }
+
+    $('#submit').click(function (e) {
+        e.preventDefault();
+        let latIn = $('#lat-in').val();
+        let lonIn = $('#lon-in').val();
+        wxFetch(latIn, lonIn);
+    })
+
 });
