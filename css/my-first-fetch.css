@@ -11,10 +11,12 @@ section {
     margin: 0.5em;
 }
 
-div {
+div.col-4 {
     height: 100%;
     text-align: center;
-
+    padding: 0;
+    background: rgba(0, 0, 0, 0.60);
+    margin: 8px;
 }
 
 ul {
@@ -36,8 +38,9 @@ p {
     height: 100%;
     color: #800000;
     font-size: 45px;
-    padding: 85px;
-    border-radius: 50%;
+
+    width: 100%;
+
 
 }
 
