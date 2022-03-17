@@ -1,8 +1,8 @@
 
 body {
     height: 100%;
-    background: url("https://wallpaperaccess.com/full/1443455.jpg") no-repeat;
-    background-size: 2000px 1600px;
+    background: url("https://www.wallpaperup.com/uploads/wallpapers/2015/03/06/633025/cc5edcd9bb018759da19392577cc14ed.jpg") no-repeat;
+    background-size: 100% 100%;
     font-family: 'Smooch Sans', sans-serif;
 }
 
@@ -30,15 +30,15 @@ ul {
 li {
     padding: 10px;
     list-style: none;
-    color: #800000;
+    color: #4d0f00;
     font-size: 30px;
 }
 
 p {
     height: 100%;
-    color: #800000;
+    color: #991f00;
     font-size: 45px;
-
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
     width: 100%;
 
 
