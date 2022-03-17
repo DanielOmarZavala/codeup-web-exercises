@@ -39,12 +39,24 @@
 <!-- Custom JS -->
 <script>
 
-    let lat = 29.4252;
-    let lon = -98.4916;
+    let lat = 36.1139;
+    let lon = -115.1739;
 
     let map = initMap(lon, lat);
     let marker = createMarker(lon, lat)
     let popup = createPopup(lon, lat)
+
+    let markers = [
+        {
+            stuff:
+        },
+        {
+            stuff:
+        },
+        {
+            stuff:
+        }
+    ]
 
     marker.setPopup(popup);
 
@@ -53,10 +65,11 @@
         return new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v9',
-            zoom: 10,
+            zoom: 17,
             center: [lon, lat]
         });
     }
+
 
     //function to create marker
     function createMarker(lon, lat) {
@@ -71,19 +84,18 @@
     function createPopup(lon, lat) {
         return new mapboxgl.Popup()
             .setLngLat([lon, lat])
-            .setHTML("<p>Codeup Rocks!</p>")
+            .setHTML("<p>Bellagio Olives</p>")
     }
 
     //geocode stuff
-$('#codeup').click(function (){
-    // the  geocode method from mapbox-geocoder-utils.js
-    geocode("600 Navarro St #350, San Antonio, TX 78205", MAP_KEY).then(function(result) {
-        console.log(result);
-        map.setCenter(result);
-        map.setZoom(17);
+    $('#codeup').click(function () {
+        // the  geocode method from mapbox-geocoder-utils.js
+        geocode("600 Navarro St #350, San Antonio, TX 78205", MAP_KEY).then(function (result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(17);
+        });
     });
-});
-
 
 
 </script>
