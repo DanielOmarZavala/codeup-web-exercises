@@ -10,6 +10,7 @@ $(document).ready(function () {
 
     wxFetch(initlat, initlon);
 
+    //fetch and build html (powerhouse)
     function wxFetch(lat, lon) {
         fetch(`https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=${lat}&lon=${lon}&appid=${OWM_KEY}`)
             .then(response => response.json())
@@ -21,20 +22,25 @@ $(document).ready(function () {
         console.log(response.daily);
         $('#box-one').html(createDailyForecast(response.daily));
     }
-
+    //loop through daily data for cards and send to cardForge, then grab & apply cards to main section
     function createDailyForecast(dailyObjArr) {
+
         let html = '<div class="row">';
+
         for (let i=0; i < 5; i++) {
-            html += createWxCard(dailyObjArr[i]);
+            html += cardForge(dailyObjArr[i]);
         }
+
         html += '<div>';
+
         return html;
     }
-
-    function createWxCard (dayObj) {
+    //create single card
+    function cardForge (dayObj) {
 
     }
 
+    //dynamic location
     $('#submit').click(function (e) {
         e.preventDefault();
         let latIn = $('#lat-in').val();
