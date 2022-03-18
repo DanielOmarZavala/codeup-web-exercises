@@ -22,22 +22,39 @@ $(document).ready(function () {
         console.log(response.daily);
         $('#box-one').html(createDailyForecast(response.daily));
     }
+
     //loop through daily data for cards and send to cardForge, then grab & apply cards to main section
     function createDailyForecast(dailyObjArr) {
-
         let html = '<div class="row">';
-
-        for (let i=0; i < 5; i++) {
+        for (let i = 0; i < 5; i++) {
             html += cardForge(dailyObjArr[i]);
         }
-
         html += '<div>';
-
         return html;
     }
-    //create single card
-    function cardForge (dayObj) {
 
+    //create single card
+    //language=HTML
+    function cardForge(dayObj) {
+        let html = '';
+        html += `
+            <div class="card" style="width: 18rem;">
+                <h5 class="card-title">Day goes here</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Temperatures go here</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Feels like: </li>
+                    <li class="list-group-item">Humidity: </li>
+                    <li class="list-group-item">A third item</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>`
+        return html
     }
 
     //dynamic location

@@ -45,6 +45,15 @@
     let map = initMap(lon, lat);
     let marker = createMarker(lon, lat)
     let popup = createPopup(lon, lat)
+    let geocoder;
+
+
+
+    function setGeocoderEventListener (){
+        geocoder.on("results", function(){
+            console.log("this is working........";)
+        })
+    }
 
     let markers = [
         {
