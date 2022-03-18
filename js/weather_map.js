@@ -32,21 +32,32 @@ $(document).ready(function () {
         html += '<div>';
         return html;
     }
-
+    //fix date
+    function extractWxDt(dayObj){
+        return {
+            date: dayObj.dt
+        }
+    }
+    //fix date
+    function modWxDt(rawDt){
+        return new Date(rawDt.date * 1000).toISOString().split('T')[0];
+    }
     //create single card
     //language=HTML
     function cardForge(dayObj) {
         let html = '';
+        let rawDate = extractWxDt(dayObj);
+        let modDate = modWxDt(rawDate);
         html += `
             <div class="card" style="width: 18rem;">
-                <h5 class="card-title">Day goes here</h5>
+                <h5 class="card-title">${modDate}</h5>
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Temperatures go here</p>
+                    <p class="card-text">${dayObj.temp.max} <span id="temp-low">${dayObj.temp.min}</span></p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Feels like: </li>
-                    <li class="list-group-item">Humidity: </li>
+                    <li class="list-group-item">Feels like: ${dayObj.feels_like.day}</li>
+                    <li class="list-group-item">Humidity: ${dayObj.humidity}</li>
                     <li class="list-group-item">A third item</li>
                 </ul>
                 <div class="card-body">
