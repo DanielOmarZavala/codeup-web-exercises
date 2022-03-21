@@ -45,27 +45,9 @@
     let map = initMap(lon, lat);
     let marker = createMarker(lon, lat)
     let popup = createPopup(lon, lat)
-    let geocoder;
 
 
 
-    function setGeocoderEventListener (){
-        geocoder.on("results", function(){
-            console.log("this is working........";)
-        })
-    }
-
-    let markers = [
-        {
-            stuff:
-        },
-        {
-            stuff:
-        },
-        {
-            stuff:
-        }
-    ]
 
     marker.setPopup(popup);
 
@@ -88,7 +70,7 @@
     }
 
     // map.setZoom(5);
-    //map.setCenter([lat, lon]);
+    // map.setCenter([lat, lon]);
 
     function createPopup(lon, lat) {
         return new mapboxgl.Popup()

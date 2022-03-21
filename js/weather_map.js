@@ -1,16 +1,22 @@
 "use strict"
 
 $(document).ready(function () {
+    /* Wx Variables */
+    let initLat = 29.5696;
+    let initLon = -98.7068;
+    let time;
 
-    //create box-one empty block element after search-container
+    /* Map Util Variables */
+    let map = initMap(initLon, initLat);
+    let marker = createMarker(initLon, initLat)
+    let popup = createPopup(initLon, initLat)
+
+    /* create box-one empty block element after search-container */
     $('#search-container').after("<section id='box-one'></section> ");
 
-    let initlat = 29.5696;
-    let initlon = 98.7068;
+    wxFetch(initLat, initLon);
 
-    wxFetch(initlat, initlon);
-
-    //fetch and build html (powerhouse)
+    /* fetch and build html (powerhouse) */
     function wxFetch(lat, lon) {
         fetch(`https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=${lat}&lon=${lon}&appid=${OWM_KEY}`)
             .then(response => response.json())
@@ -23,7 +29,7 @@ $(document).ready(function () {
         $('#box-one').html(createDailyForecast(response.daily));
     }
 
-    //loop through daily data for cards and send to cardForge, then grab & apply cards to main section
+    /* loop through daily data for cards and send to cardForge, then grab & apply cards to main section */
     function createDailyForecast(dailyObjArr) {
         let html = '<div class="row">';
         for (let i = 0; i < 5; i++) {
@@ -33,20 +39,22 @@ $(document).ready(function () {
         return html;
     }
     //fix date
-    function extractWxDt(dayObj){
-        return {
-            date: dayObj.dt
-        }
+    function modWxDt(UNIX_timestamp){
+        // return new Date(rawDt.date * 1000).toISOString().split('T')[0];
+        //Converts UNIX timestamp to Day Month Year format
+            var a = new Date(UNIX_timestamp * 1000);
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var year = a.getFullYear();
+            var month = months[a.getMonth()];
+            var date = a.getDate();
+            time = date + ' ' + month + ' ' + year;
+            return time;
     }
-    //fix date
-    function modWxDt(rawDt){
-        return new Date(rawDt.date * 1000).toISOString().split('T')[0];
-    }
-    //create single card
+    /* Create Single Card */
     //language=HTML
     function cardForge(dayObj) {
         let html = '';
-        let rawDate = extractWxDt(dayObj);
+        let rawDate = dayObj.dt;
         let modDate = modWxDt(rawDate);
         html += `
             <div class="card" style="width: 18rem;">
@@ -74,6 +82,31 @@ $(document).ready(function () {
         let latIn = $('#lat-in').val();
         let lonIn = $('#lon-in').val();
         wxFetch(latIn, lonIn);
-    })
+    });
 
+    /*YOU HAVE REACHED THE MAPBOX JS SECTION*/
+
+    marker.setPopup(popup);
+
+    function initMap(lon, lat) {
+        mapboxgl.accessToken = MAP_KEY;
+        return new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 17,
+            center: [lon, lat]
+        });
+    }
+    /* Create Marker */
+    function createMarker(lon, lat) {
+        return new mapboxgl.Marker()
+            .setLngLat([lon, lat])
+            .addTo(map);
+    }
+    /* Create Popup */
+    function createPopup(lon, lat) {
+        return new mapboxgl.Popup()
+            .setLngLat([lon, lat])
+            .setHTML("<p>Bellagio Olives</p>")
+    }
 });
