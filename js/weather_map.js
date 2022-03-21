@@ -10,6 +10,7 @@ $(document).ready(function () {
     let map = initMap(initLon, initLat);
     let marker = createMarker(initLon, initLat)
     let popup = createPopup(initLon, initLat)
+    console.log("as;lfkjasdfl");
 
     /* create box-one empty block element after search-container */
     $('#search-container').after("<section id='box-one'></section> ");
@@ -38,19 +39,22 @@ $(document).ready(function () {
         html += '<div>';
         return html;
     }
+
     //fix date
-    function modWxDt(UNIX_timestamp){
+    function modWxDt(UNIX_timestamp) {
         // return new Date(rawDt.date * 1000).toISOString().split('T')[0];
         //Converts UNIX timestamp to Day Month Year format
-            var a = new Date(UNIX_timestamp * 1000);
-            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            var year = a.getFullYear();
-            var month = months[a.getMonth()];
-            var date = a.getDate();
-            time = date + ' ' + month + ' ' + year;
-            return time;
+        var a = new Date(UNIX_timestamp * 1000);
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        var year = a.getFullYear();
+        var month = months[a.getMonth()];
+        var date = a.getDate();
+        time = date + ' ' + month + ' ' + year;
+        return time;
     }
-    /* Create Single Card */
+
+    /* Create Single Card with CardForge*/
+
     //language=HTML
     function cardForge(dayObj) {
         let html = '';
@@ -86,7 +90,22 @@ $(document).ready(function () {
 
     /*YOU HAVE REACHED THE MAPBOX JS SECTION*/
 
+
     marker.setPopup(popup);
+    marker.setDraggable(true);
+
+    /* Assign Clicked Coords to Wx Data */
+        map.on('click', (e) => {
+            wxFetch(`${e.lngLat.lat}`, `${e.lngLat.lng}`);
+
+            marker.setLngLat([e.lngLat.lng, e.lngLat.lat]);
+        });
+
+    /* Assign Dragend Coords to Wx Data */
+    marker.on('dragend', (e) => {
+        console.log(e.target._lngLat.lat);
+        wxFetch(`${e.target._lngLat.lat}`, `${e.target._lngLat.lng}`);
+    });
 
     function initMap(lon, lat) {
         mapboxgl.accessToken = MAP_KEY;
@@ -97,16 +116,28 @@ $(document).ready(function () {
             center: [lon, lat]
         });
     }
+
     /* Create Marker */
     function createMarker(lon, lat) {
-        return new mapboxgl.Marker()
-            .setLngLat([lon, lat])
-            .addTo(map);
+            return new mapboxgl.Marker()
+                .setLngLat([lon, lat])
+                .addTo(map);
     }
+
     /* Create Popup */
     function createPopup(lon, lat) {
         return new mapboxgl.Popup()
             .setLngLat([lon, lat])
             .setHTML("<p>Bellagio Olives</p>")
     }
+
+    /* Add the control to the map. */
+    // function map.addControl(
+    //     new MapboxGeocoder({
+    //         accessToken: mapboxgl.accessToken,
+    //         mapboxgl: mapboxgl
+    //     })
+    // );
 });
+
+
