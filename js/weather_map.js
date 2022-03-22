@@ -25,7 +25,6 @@ $(document).ready(function () {
     }
 
     function renderDailyForecast(response) {
-        console.log(response.daily);
         $('#box-one').html(createCurrentWx(response.daily));
         $('.content').html(createDailyForecast(response.daily));
     }
@@ -71,7 +70,7 @@ $(document).ready(function () {
         let rawDate = dayObj.dt;
         let modDate = modWxDt(rawDate);
 
-        // if (`dayObj.weather[0].main === "Clear"`) {
+        if (`dayObj.weather[0].main === "Clear"`) {
         html += `
             <div class="cards row col-3">
                 <h5>${modDate}</h5>
@@ -86,36 +85,38 @@ $(document).ready(function () {
                 <div>
                 </div>
             </div>`
-        // }
-        // else if (`dayObj.weather[0].main === "Rain"`){
-        //     html += `
-        //     <div class="cards row col-3">
-        //         <h5 class="card-title col-12">${modDate}</h5>
-        //         <div class="card-body col-3">
-        //             <p class="card-text">${dayObj.temp.max} <span id="temp-low">${dayObj.temp.min}</span></p>
-        //         </div>
-        //         <ul class="col-3">
-        //             <li class="list-group-item">Feels like: ${dayObj.feels_like.day}</li>
-        //             <li class="list-group-item">Humidity: ${dayObj.humidity}</li>
-        //         </ul>
-        //         <div>
-        //         </div>
-        //     </div>`
-        // } else if (`dayObj.weather[0].main === "Clouds"`){
-        //     html += `
-        //     <div class="cards col-3">
-        //         <h5 class="card-title">${modDate}</h5>
-        //         <div class="card-body">
-        //             <p class="card-text">${dayObj.temp.max} <span id="temp-low">${dayObj.temp.min}</span></p>
-        //         </div>
-        //         <ul class="">
-        //             <li class="list-group-item">Feels like: ${dayObj.feels_like.day}</li>
-        //             <li class="list-group-item">Humidity: ${dayObj.humidity}</li>
-        //         </ul>
-        //         <div>
-        //         </div>
-        //     </div>`
-        // }
+        }
+        else if (`dayObj.weather[0].main === "Rain"`){
+            html += `
+                <div class="cards row col-3">
+                    <h5>${modDate}</h5>
+                    <div id="p-container" class="col-4">
+                        <p class=""><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
+                                id="temp-low">${Math.round(dayObj.temp.min)}&deg</span></p>
+                    </div>
+                    <ul class="col-5 justify-content-around">
+                        <li class="list-item">Feels like: ${dayObj.feels_like.day}</li>
+                        <li class="list-item">Humidity: ${dayObj.humidity}</li>
+                    </ul>
+                    <div>
+                    </div>
+                </div>`
+        } else if (`dayObj.weather[0].main === "Clouds"`){
+            html += `
+                <div class="cards row col-3">
+                    <h5>${modDate}</h5>
+                    <div id="p-container" class="col-4">
+                        <p class=""><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
+                                id="temp-low">${Math.round(dayObj.temp.min)}&deg</span></p>
+                    </div>
+                    <ul class="col-5 justify-content-around">
+                        <li class="list-item">Feels like: ${dayObj.feels_like.day}</li>
+                        <li class="list-item">Humidity: ${dayObj.humidity}</li>
+                    </ul>
+                    <div>
+                    </div>
+                </div>`
+        }
 
 
         return html
@@ -129,7 +130,7 @@ $(document).ready(function () {
         let rawDate = dayObj.dt;
         let modDate = modWxDt(rawDate);
 
-        // if (`dayObj.weather[0].main === "Clear"`) {
+        if (`dayObj.weather[0].main === "Clear"`) {
         html += `
             <div class="cards row col-12">
                 <h5 id="popH">${modDate}</h5>
@@ -141,36 +142,32 @@ $(document).ready(function () {
                     <p id="humidity">Humidity: ${dayObj.humidity}</p>
                 </div>
             </div>`
-        // }
-        // else if (`dayObj.weather[0].main === "Rain"`){
-        //     html += `
-        //     <div class="cards row col-3">
-        //         <h5 class="card-title col-12">${modDate}</h5>
-        //         <div class="card-body col-3">
-        //             <p class="card-text">${dayObj.temp.max} <span id="temp-low">${dayObj.temp.min}</span></p>
-        //         </div>
-        //         <ul class="col-3">
-        //             <li class="list-group-item">Feels like: ${dayObj.feels_like.day}</li>
-        //             <li class="list-group-item">Humidity: ${dayObj.humidity}</li>
-        //         </ul>
-        //         <div>
-        //         </div>
-        //     </div>`
-        // } else if (`dayObj.weather[0].main === "Clouds"`){
-        //     html += `
-        //     <div class="cards col-3">
-        //         <h5 class="card-title">${modDate}</h5>
-        //         <div class="card-body">
-        //             <p class="card-text">${dayObj.temp.max} <span id="temp-low">${dayObj.temp.min}</span></p>
-        //         </div>
-        //         <ul class="">
-        //             <li class="list-group-item">Feels like: ${dayObj.feels_like.day}</li>
-        //             <li class="list-group-item">Humidity: ${dayObj.humidity}</li>
-        //         </ul>
-        //         <div>
-        //         </div>
-        //     </div>`
-        // }
+        }
+        else if (`dayObj.weather[0].main === "Rain"`){
+            html += `
+                <div style="background: red;" class="cards row col-12">
+                    <h5 id="popH">${modDate}</h5>
+                    <div id="p-container" class="col-12">
+                        <p class="popP"><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
+                                id="temp-low">${Math.round(dayObj.temp.min)}&deg</span></p>
+                    </div>
+                    <div id="p-container" class="col-12">
+                        <p id="humidity">Humidity: ${dayObj.humidity}</p>
+                    </div>
+                </div>`
+        } else if (`dayObj.weather[1].main === "Clouds"`){
+            html += `
+                <div class="cards row col-12" style="background: red;">
+                    <h5 id="popH">${modDate}</h5>
+                    <div id="p-container" class="col-12">
+                        <p class="popP"><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
+                                id="temp-low">${Math.round(dayObj.temp.min)}&deg</span></p>
+                    </div>
+                    <div id="p-container" class="col-12">
+                        <p id="humidity">Humidity: ${dayObj.humidity}</p>
+                    </div>
+                </div>`
+        }
 
 
         return html
@@ -222,7 +219,7 @@ $(document).ready(function () {
     function createPopup(lon, lat) {
         return new mapboxgl.Popup()
             .setLngLat([lon, lat])
-            .setHTML("<p>Bellagio Olives</p>")
+            .setHTML("<p>Powered by Coffee and Anxiety.</p>")
     }
 
     let geocoder = new MapboxGeocoder({
@@ -236,7 +233,6 @@ $(document).ready(function () {
     );
 
     geocoder.on("result", function (e){
-        console.log(e.result.center[0]);
         marker.setLngLat(e.result.center);
         wxFetch(e.result.center[1], e.result.center[0]);
     });
