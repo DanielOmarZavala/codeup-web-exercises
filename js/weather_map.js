@@ -105,7 +105,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgb
         } else if (dayObj.weather[0].main === "Clouds") {
             html += `
                 <div style="background: rgb(2,0,36);
-                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(106,26,26,1) 50%, rgba(242,0,0,1) 100%);">
+                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(106,26,26,1) 50%, rgba(242,0,0,1) 100%);"
                     class="cards row col-3">
                     <h5>${modDate}</h5>
                     <div id="p-container" class="col-4">
