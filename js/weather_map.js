@@ -71,25 +71,8 @@ $(document).ready(function () {
         let modDate = modWxDt(rawDate);
 
         if (dayObj.weather[0].main === "Clear") {
-        html += `
-            <div class="cards row col-3">
-                <h5>${modDate}</h5>
-                <div id="p-container" class="col-4">
-                    <p class=""><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
-                            id="temp-low">${Math.round(dayObj.temp.min)}&deg</span></p>
-                </div>
-                <ul class="col-5 justify-content-around">
-                    <li class="list-item">Feels like: ${dayObj.feels_like.day}</li>
-                    <li class="list-item">Humidity: ${dayObj.humidity}</li>
-                </ul>
-                <div>
-                </div>
-            </div>`
-        }
-        else if (dayObj.weather[0].main === "Rain"){
             html += `
-                <div style="background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgba(154,0,242,1) 100%);" class="cards row col-3">
+                <div class="cards row col-3">
                     <h5>${modDate}</h5>
                     <div id="p-container" class="col-4">
                         <p class=""><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
@@ -102,10 +85,28 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgb
                     <div>
                     </div>
                 </div>`
-        } else if (dayObj.weather[0].main === "Clouds"){
+        } else if (dayObj.weather[0].main === "Rain") {
             html += `
                 <div style="background: rgb(2,0,36);
-                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(106,26,26,1) 50%, rgba(242,0,0,1) 100%);"> class="cards row col-3">
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgba(154,0,242,1) 100%);"
+                     class="cards row col-3">
+                    <h5>${modDate}</h5>
+                    <div id="p-container" class="col-4">
+                        <p class=""><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
+                                id="temp-low">${Math.round(dayObj.temp.min)}&deg</span></p>
+                    </div>
+                    <ul class="col-5 justify-content-around">
+                        <li class="list-item">Feels like: ${dayObj.feels_like.day}</li>
+                        <li class="list-item">Humidity: ${dayObj.humidity}</li>
+                    </ul>
+                    <div>
+                    </div>
+                </div>`
+        } else if (dayObj.weather[0].main === "Clouds") {
+            html += `
+                <div style="background: rgb(2,0,36);
+                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(106,26,26,1) 50%, rgba(242,0,0,1) 100%);">
+                    class="cards row col-3">
                     <h5>${modDate}</h5>
                     <div id="p-container" class="col-4">
                         <p class=""><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
@@ -132,22 +133,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgb
         let rawDate = dayObj.dt;
         let modDate = modWxDt(rawDate);
         if (dayObj.weather[0].main === "Clear") {
-        html += `
-            <div class="cards row col-12">
-                <h5 id="popH">${modDate}</h5>
-                <div id="p-container" class="col-12">
-                    <p class="popP"><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
-                            id="temp-low">${Math.round(dayObj.temp.min)}&deg</span></p>
-                </div>
-                <div id="p-container" class="col-12">
-                    <p id="humidity">Humidity: ${dayObj.humidity}</p>
-                </div>
-            </div>`
-        }
-        else if (dayObj.weather[0].main === "Rain"){
             html += `
-                <div style="background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgba(154,0,242,1) 100%);" class="cards row col-12">
+                <div class="cards row col-12">
                     <h5 id="popH">${modDate}</h5>
                     <div id="p-container" class="col-12">
                         <p class="popP"><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
@@ -157,7 +144,21 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgb
                         <p id="humidity">Humidity: ${dayObj.humidity}</p>
                     </div>
                 </div>`
-        } else if (dayObj.weather[0].main === "Clouds"){
+        } else if (dayObj.weather[0].main === "Rain") {
+            html += `
+                <div style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgba(154,0,242,1) 100%);"
+                     class="cards row col-12">
+                    <h5 id="popH">${modDate}</h5>
+                    <div id="p-container" class="col-12">
+                        <p class="popP"><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
+                                id="temp-low">${Math.round(dayObj.temp.min)}&deg</span></p>
+                    </div>
+                    <div id="p-container" class="col-12">
+                        <p id="humidity">Humidity: ${dayObj.humidity}</p>
+                    </div>
+                </div>`
+        } else if (dayObj.weather[0].main === "Clouds") {
             html += `
                 <div class="cards row col-12" style="background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(106,26,26,1) 50%, rgba(242,0,0,1) 100%);">
@@ -235,7 +236,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(106,26,26,1) 50%, rgb
         geocoder
     );
 
-    geocoder.on("result", function (e){
+    geocoder.on("result", function (e) {
         marker.setLngLat(e.result.center);
         wxFetch(e.result.center[1], e.result.center[0]);
     });
