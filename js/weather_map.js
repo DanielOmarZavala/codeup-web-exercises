@@ -10,10 +10,9 @@ $(document).ready(function () {
     let map = initMap(initLon, initLat);
     let marker = createMarker(initLon, initLat)
     let popup = createPopup(initLon, initLat)
-    console.log("as;lfkjasdfl");
 
     /* create box-one empty block element after search-container */
-    $('#search-container').after("<section id='box-one'></section> ");
+    $('#search-container').after("<section id='box-one'></section>");
 
     wxFetch(initLat, initLon);
 
@@ -27,12 +26,23 @@ $(document).ready(function () {
 
     function renderDailyForecast(response) {
         console.log(response.daily);
-        $('#box-one').html(createDailyForecast(response.daily));
+        $('#box-one').html(createCurrentWx(response.daily));
+        $('.content').html(createDailyForecast(response.daily));
+    }
+
+    /* loop through daily data for cards and send to cardForge, then grab & apply cards to main section */
+    function createCurrentWx(dailyObjArr) {
+        let html = '<div class="row justify-content-center align-items-center">';
+        for (let i = 0; i <= 0; i++) {
+            html += cardForge(dailyObjArr[i]);
+        }
+        html += '<div>';
+        return html;
     }
 
     /* loop through daily data for cards and send to cardForge, then grab & apply cards to main section */
     function createDailyForecast(dailyObjArr) {
-        let html = '<div class="row">';
+        let html = '<div class="row justify-content-center align-items-center">';
         for (let i = 0; i < 5; i++) {
             html += cardForge(dailyObjArr[i]);
         }
@@ -60,23 +70,54 @@ $(document).ready(function () {
         let html = '';
         let rawDate = dayObj.dt;
         let modDate = modWxDt(rawDate);
-        html += `
-            <div class="card" style="width: 18rem;">
-                <h5 class="card-title">${modDate}</h5>
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">${dayObj.temp.max} <span id="temp-low">${dayObj.temp.min}</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Feels like: ${dayObj.feels_like.day}</li>
-                    <li class="list-group-item">Humidity: ${dayObj.humidity}</li>
-                    <li class="list-group-item">A third item</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>`
+
+        // if (`dayObj.weather[0].main === "Clear"`) {
+            html += `
+                <div class="cards row col-3">
+                    <h5 class="card-title">${modDate}</h5>
+                    <div class="col-3">
+                        <p class=""><span id="temp-high">${dayObj.temp.max}</span> <span
+                                id="temp-low">${dayObj.temp.min}</span></p>
+                    </div>
+                    <ul class="col-4 justify-content-around">
+                        <li class="list-item">Feels like: ${dayObj.feels_like.day}</li>
+                        <li class="list-item">Humidity: ${dayObj.humidity}</li>
+                    </ul>
+                    <div>
+                    </div>
+                </div>`
+        // }
+        // else if (`dayObj.weather[0].main === "Rain"`){
+        //     html += `
+        //     <div class="cards row col-3">
+        //         <h5 class="card-title col-12">${modDate}</h5>
+        //         <div class="card-body col-3">
+        //             <p class="card-text">${dayObj.temp.max} <span id="temp-low">${dayObj.temp.min}</span></p>
+        //         </div>
+        //         <ul class="col-3">
+        //             <li class="list-group-item">Feels like: ${dayObj.feels_like.day}</li>
+        //             <li class="list-group-item">Humidity: ${dayObj.humidity}</li>
+        //         </ul>
+        //         <div>
+        //         </div>
+        //     </div>`
+        // } else if (`dayObj.weather[0].main === "Clouds"`){
+        //     html += `
+        //     <div class="cards col-3">
+        //         <h5 class="card-title">${modDate}</h5>
+        //         <div class="card-body">
+        //             <p class="card-text">${dayObj.temp.max} <span id="temp-low">${dayObj.temp.min}</span></p>
+        //         </div>
+        //         <ul class="">
+        //             <li class="list-group-item">Feels like: ${dayObj.feels_like.day}</li>
+        //             <li class="list-group-item">Humidity: ${dayObj.humidity}</li>
+        //         </ul>
+        //         <div>
+        //         </div>
+        //     </div>`
+        // }
+
+
         return html
     }
 
@@ -97,13 +138,11 @@ $(document).ready(function () {
     /* Assign Clicked Coords to Wx Data */
         map.on('click', (e) => {
             wxFetch(`${e.lngLat.lat}`, `${e.lngLat.lng}`);
-
             marker.setLngLat([e.lngLat.lng, e.lngLat.lat]);
         });
 
     /* Assign Dragend Coords to Wx Data */
     marker.on('dragend', (e) => {
-        console.log(e.target._lngLat.lat);
         wxFetch(`${e.target._lngLat.lat}`, `${e.target._lngLat.lng}`);
     });
 
@@ -112,7 +151,7 @@ $(document).ready(function () {
         return new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v9',
-            zoom: 17,
+            zoom: 8,
             center: [lon, lat]
         });
     }

@@ -35,16 +35,31 @@
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
-<main>
+<main class="row d-flex">
     <!-- Initial Search Container -->
     <div id="search-container">
-        <input id="lat-in" type="search" name="search" placeholder="lat">
-        <input id="lon-in" type="search" name="search2" placeholder="lon">
-        <button id="search-btn" type="button">Submit</button>
+<!--        <input id="lat-in" type="search" name="search" placeholder="lat">-->
+<!--        <input id="lon-in" type="search" name="search2" placeholder="lon">-->
+<!--        <button id="search-btn" type="button">Submit</button>-->
+    </div>
+
+    <div class="box">
+        <a class="button" href="#popup1">Let me Pop up</a>
     </div>
 
     <!-- The HTML element that serves as the Mapbox container -->
-    <div id='map'></div>
+    <div id="map-container" class="col-12 justify-content-center align-items-center">
+        <div id="map"></div>
+    </div>
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Here i am</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+            </div>
+        </div>
+    </div>
 </main>
 
 </body>
