@@ -70,7 +70,7 @@ $(document).ready(function () {
         let rawDate = dayObj.dt;
         let modDate = modWxDt(rawDate);
 
-        if (`dayObj.weather[0].main === "Clear"`) {
+        if (dayObj.weather[0].main === "Clear") {
         html += `
             <div class="cards row col-3">
                 <h5>${modDate}</h5>
@@ -86,9 +86,10 @@ $(document).ready(function () {
                 </div>
             </div>`
         }
-        else if (`dayObj.weather[0].main === "Rain"`){
+        else if (dayObj.weather[0].main === "Rain"){
             html += `
-                <div class="cards row col-3">
+                <div style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgba(154,0,242,1) 100%);" class="cards row col-3">
                     <h5>${modDate}</h5>
                     <div id="p-container" class="col-4">
                         <p class=""><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
@@ -101,9 +102,10 @@ $(document).ready(function () {
                     <div>
                     </div>
                 </div>`
-        } else if (`dayObj.weather[0].main === "Clouds"`){
+        } else if (dayObj.weather[0].main === "Clouds"){
             html += `
-                <div class="cards row col-3">
+                <div style="background: rgb(2,0,36);
+                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(106,26,26,1) 50%, rgba(242,0,0,1) 100%);"> class="cards row col-3">
                     <h5>${modDate}</h5>
                     <div id="p-container" class="col-4">
                         <p class=""><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
@@ -129,8 +131,7 @@ $(document).ready(function () {
         let html = '';
         let rawDate = dayObj.dt;
         let modDate = modWxDt(rawDate);
-
-        if (`dayObj.weather[0].main === "Clear"`) {
+        if (dayObj.weather[0].main === "Clear") {
         html += `
             <div class="cards row col-12">
                 <h5 id="popH">${modDate}</h5>
@@ -143,9 +144,10 @@ $(document).ready(function () {
                 </div>
             </div>`
         }
-        else if (`dayObj.weather[0].main === "Rain"`){
+        else if (dayObj.weather[0].main === "Rain"){
             html += `
-                <div style="background: red;" class="cards row col-12">
+                <div style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgba(154,0,242,1) 100%);" class="cards row col-12">
                     <h5 id="popH">${modDate}</h5>
                     <div id="p-container" class="col-12">
                         <p class="popP"><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
@@ -155,9 +157,10 @@ $(document).ready(function () {
                         <p id="humidity">Humidity: ${dayObj.humidity}</p>
                     </div>
                 </div>`
-        } else if (`dayObj.weather[1].main === "Clouds"`){
+        } else if (dayObj.weather[0].main === "Clouds"){
             html += `
-                <div class="cards row col-12" style="background: red;">
+                <div class="cards row col-12" style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(106,26,26,1) 50%, rgba(242,0,0,1) 100%);">
                     <h5 id="popH">${modDate}</h5>
                     <div id="p-container" class="col-12">
                         <p class="popP"><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
