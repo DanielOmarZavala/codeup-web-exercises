@@ -26,11 +26,39 @@
 .card-body {
     width: 10%;
 }
+h5 {
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    color: #FFFFFF;
+}
+#p-container {
+    padding: 0;
+}
 p {
     width: 100%;
 }
+#temp-high {
+    font-size: 50px;
+    color: #FFFFFF;
+}
+#temp-low {
+
+    color: #848487;
+}
+sup {
+    font-size: 30px;
+}
+ul {
+    padding-top: 14px;
+
+
+}
 li {
     list-style: none;
+    border-left: 1px solid #FFFFFF;
+    padding-left: 10px;
+    color: #FFFFFF;
 }
 .box {
     width: 40%;

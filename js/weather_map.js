@@ -59,7 +59,7 @@ $(document).ready(function () {
         var year = a.getFullYear();
         var month = months[a.getMonth()];
         var date = a.getDate();
-        time = date + ' ' + month + ' ' + year;
+        time = date + ' ' + month + ' ';
         return time;
     }
 
@@ -74,12 +74,12 @@ $(document).ready(function () {
         // if (`dayObj.weather[0].main === "Clear"`) {
             html += `
                 <div class="cards row col-3">
-                    <h5 class="card-title">${modDate}</h5>
-                    <div class="col-3">
-                        <p class=""><span id="temp-high">${dayObj.temp.max}</span> <span
-                                id="temp-low">${dayObj.temp.min}</span></p>
+                    <h5>${modDate}</h5>
+                    <div id="p-container" class="col-4">
+                        <p class=""><span id="temp-high">${dayObj.temp.max}&deg</span> <span
+                                id="temp-low">${dayObj.temp.min}&deg</span></p>
                     </div>
-                    <ul class="col-4 justify-content-around">
+                    <ul class="col-5 justify-content-around">
                         <li class="list-item">Feels like: ${dayObj.feels_like.day}</li>
                         <li class="list-item">Humidity: ${dayObj.humidity}</li>
                     </ul>
