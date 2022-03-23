@@ -71,6 +71,7 @@ $(document).ready(function () {
         let modDate = modWxDt(rawDate);
 
         if (dayObj.weather[0].main === "Clear") {
+            $('main').css("background", "url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v1015-104d-kstoq8gi.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=93539efc90aff01bd5fa0ebc0c53b9a8')")
             html += `
                 <div class="cards row col-3">
                     <h5>${modDate}</h5>
@@ -103,6 +104,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgb
                     </div>
                 </div>`
         } else if (dayObj.weather[0].main === "Clouds") {
+            $('main').css("background-image", "https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvdjEwMTUtMTAzZC1rc3RvcWE0YS5qcGc.jpg?s=qfWswayucuVh1HfGiJISwngolSOqyKcmKcd6m-lNilQ");
+
             html += `
                 <div style="background: rgb(2,0,36);
                 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(106,26,26,1) 50%, rgba(242,0,0,1) 100%);"
