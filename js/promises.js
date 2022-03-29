@@ -18,6 +18,9 @@ getUserLastPushEvent('mojombo').then(event => {
     $('body').html('<h1>' + 'Mojombos last push event was created at' +  event.created_at + '</h1>')
 });
 
+//TODO:
+/* Filter to last commit, not to last push */
+
 /* Filter to Push Event */
 function coolFunc (response) {
     for (let event of response) {
