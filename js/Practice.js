@@ -211,3 +211,22 @@ console.log(numbers.map(n => n * 3));
 
 console.log(numbers);
 
+let inPerson;
+
+let hasCar = prompt("Do you have a car? Y or N?");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
