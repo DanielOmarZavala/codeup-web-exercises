@@ -11,6 +11,10 @@ main {
 
 }
 
+.center-background {
+    background-position: center center;
+}
+
 #map {
     /* the width and height may be set to any size */
     width: 100%;

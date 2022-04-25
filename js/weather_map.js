@@ -71,7 +71,7 @@ $(document).ready(function () {
         let modDate = modWxDt(rawDate);
 
         if (dayObj.weather[0].main === "Clear") {
-            $('main').css("background", "url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v1015-104d-kstoq8gi.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=93539efc90aff01bd5fa0ebc0c53b9a8')")
+            $('main').css("background", "url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v1015-104d-kstoq8gi.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=93539efc90aff01bd5fa0ebc0c53b9a8')");
             html += `
                 <div class="cards row col-3">
                     <h5>${modDate}</h5>
@@ -87,10 +87,11 @@ $(document).ready(function () {
                     </div>
                 </div>`
         } else if (dayObj.weather[0].main === "Rain") {
+            $('main').css("background", "url('https://static.vecteezy.com/system/resources/previews/005/414/479/non_2x/cloudy-paper-art-illustration-sky-with-cloud-background-illustration-paper-art-style-copy-space-for-text-illustration-vector.jpg')");
             html += `
-                <div style="background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgba(154,0,242,1) 100%);"
-                     class="cards row col-3">
+                <div style="
+                    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgba(154,0,242,1) 100%);"
+                     class="cards center-background row col-3">
                     <h5>${modDate}</h5>
                     <div id="p-container" class="col-4">
                         <p class=""><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
@@ -104,12 +105,11 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgb
                     </div>
                 </div>`
         } else if (dayObj.weather[0].main === "Clouds") {
-            $('main').css("background-image", "https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvdjEwMTUtMTAzZC1rc3RvcWE0YS5qcGc.jpg?s=qfWswayucuVh1HfGiJISwngolSOqyKcmKcd6m-lNilQ");
-
+            $('main').toggleClass("center-background").css("background", "url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v1015-101-kstopjaf.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=c7b23e2554446e741a5e353aff699af1')");
             html += `
-                <div style="background: rgb(2,0,36);
-                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(106,26,26,1) 50%, rgba(242,0,0,1) 100%);"
-                    class="cards row col-3">
+                <div style="
+                    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,26,106,1) 50%, rgba(154,0,242,1) 100%);"
+                     class="cards row col-3">
                     <h5>${modDate}</h5>
                     <div id="p-container" class="col-4">
                         <p class=""><span id="temp-high">${Math.round(dayObj.temp.max)}&deg</span> <span
